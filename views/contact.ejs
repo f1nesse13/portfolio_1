@@ -1,0 +1,49 @@
+<% include partials/header %>
+	<!-- CONTACT FORM LOGIC -->
+<section class="contact-section">
+	<% if(typeof type !== 'undefined'){ %>
+		<% if(type === 'error'){ %>
+			<div class="alert fade-in alert-error">
+				<a class="close" href="#" data-dismiss="alert">
+					<i class="fa fa-cross"></i>
+				</a>
+				Problem encountered please resend or contact by phone.
+			</div>
+	<%	} if(type === 'empty') { %>
+		<div class="alert fade-in alert-warning"> 
+			<a class="close" href="#" data-dismiss="alert">
+				<i class="fa fa-cross"></i>
+			</a>
+				<%=msg %>
+		</div>
+	<%	} if(type === 'success') { %>
+		<div class="alert fade-in alert-success"> 
+			<a class="close" href="#" data-dismiss="alert">
+				<i class="fa fa-cross"></i>
+			</a>
+				Success! You will hear from me as soon as possible.
+		</div>
+<%	} %>
+<% } %>
+
+			<div class="content-cont">
+				<a id="contact"></a>
+					<h1>Contact Me</h1>
+					<div><p class="time">My current time is <%=moment(Date()).utcOffset("-05:00").format("dddd, MMMM Do YYYY, h:mm:ss")%> </p></div>
+					<h3>You can use this form to get into contact with me.</h3>
+					<form class="contact-form" action="/contact" method="POST">
+						<h2>Send Me an E-Mail:</h2>
+							<input id="form-name" type="text" placeholder="Your Name" name="name" required required-size="40" 
+							value="<% if (typeof name !== 'undefined') { %> <%=name %> <% } %>" >
+							<input id="form-email" type="email" placeholder="Your Email" name="email" required required-size="40"
+							value="<% if (typeof email !== 'undefined') { %> <%=email %> <% } %>">
+							<input id="form-company" type="text" placeholder="Company" name="company">
+							<textarea id="form-message" placeholder="How can I help you?" name="message" rows=10 required-cols=30 required
+							value="<% if (typeof body !== 'undefined') { %> <%=body %> <% } %>"></textarea>
+						
+						<button>Send your message <i class="fa fa-paper-plane"></i></button> 
+					</form>
+					</div>
+					
+</section>
+<% include partials/footer %>
