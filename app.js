@@ -26,10 +26,10 @@ app.get("/contact", (req,res) => {
 app.post("/contact", function(req, res){
     // Spambot check
     if(req.body.company) {
-        res.render("index", {
+        res.render("contact", {
             title: "Contact",
             err: true,
-            page: 'index',
+            page: 'contact',
             type: 'empty',
             body: req.body.message,
             name: req.body.name,
@@ -40,10 +40,10 @@ app.post("/contact", function(req, res){
     }
         // Make sure fields are filled out
         if(req.body.name === "undefined" || req.body.email === "undefined" || req.body.message === "undefined") {
-            res.render("index", {
+            res.render("contact", {
                 title: "Contact",
                 err: true,
-                page: 'index',
+                page: 'contact',
                 type: 'empty',
                 body: req.body.message,
                 name: req.body.name,
@@ -58,10 +58,10 @@ app.post("/contact", function(req, res){
         let emailChecked = emailCheck(req.body.email);
 
         if (emailChecked === false) {
-            res.render("index", {
+            res.render("contact", {
                 title: "Contact",
                 err: true,
-                page: 'index',
+                page: 'contact',
                 type: 'empty',
                 body: req.body.message,
                 name: req.body.name,
@@ -75,6 +75,7 @@ app.post("/contact", function(req, res){
         let mailOptions, transporter;
 
             transporter = nodemailer.createTransport({
+            service: "Godaddy",
             host: "smtpout.secureserver.net",
             port: "25",
             secureConnection: false,
@@ -91,30 +92,27 @@ app.post("/contact", function(req, res){
 
         mailOptions = {
             from: "jpell@finessedesigns.net",
-            to: "jpell3130@gmail.com",
+            to: "jpell@finessedesigns.net",
             subject: "Sent by website from - " + req.body.name,
             text: req.body.message + " -----Sent by: NAME: " + req.body.name + " EMAIL: " + req.body.email + " ------ "
         };
         transporter.sendMail(mailOptions, function(err, info){
             if(err) {
-                console.log(err)
-                res.render('index', {
+                res.render('contact', {
                     title: "Contact",
-                    page: "index",
+                    page: "contact",
                     type: "error",
                     description: "Email was not successful"});
             }
                 else {
-                    res.render('index', {
+                    res.render('contact', {
                         title: "Contact",
-                        page: "index",
+                        page: "contact",
                         type: "success",
                         description: "Email sent sucessfully!"});
                 }
         });
     });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Server listening");
-});
+app.listen(process.env.PORT, process.env.IP);
 

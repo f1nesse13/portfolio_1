@@ -1,4 +1,4 @@
-/*GENERAL STYLE*/
+/* ---------- GENERAL STYLE -----------*/
 html, body {
 	margin: 0;
 	padding: 0;
@@ -11,7 +11,7 @@ body {
 	background-color: #1f1f1f;
 	color: #eee;
 }
-/* Return arrow */
+/* --------- Return arrow ---------- */
 #return-to-top {
     position: fixed;
     bottom: 20px;
@@ -25,8 +25,8 @@ body {
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     border-radius: 35px;
-	display: none;
-	opacity: .5;
+    display: none;
+    opacity: .5;
 }
 #return-to-top .fa-angle-up {
     color: #fff;
@@ -45,7 +45,7 @@ body {
 	animation: arrowAni .5s;
 	opacity: 1;
 }
-/*NAV BAR AND BRAND IMAGE*/
+/* ---------- NAV BAR AND BRAND IMAGE ----------*/
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -86,6 +86,28 @@ nav {
 	transform: scale(0);
 	opacity: 0;
 	animation: fadeIn .5s .5s ease-out forwards;
+}
+@media (max-width: 570px) {
+	.nav-links {
+		font-size: .7em;
+	}
+	.hero-content h1 {
+		font-size: .5em;
+	}
+	.hero-content p {
+		font-size: .3em;
+		width: 100%;
+	}
+	.contact-btn {
+		height: 20px;
+		width: 90px;
+		font-size: .5em;
+		margin-bottom: 10px;
+	}
+	.fa-angle-down {
+		font-size: 1em;
+	}
+	
 }
 .shadow-effect a {
 	color: #ddd;
@@ -240,38 +262,32 @@ hr {
 		font-size: 1.2em;
 	}
 }
-@media (max-width: 615px) {
+@media (max-width: 640px), (max-height: 550px) {
 	nav {
 		flex-wrap: wrap;
 		flex-direction: column;
 	}
+	.nav-links{
+		font-size: 1em;
+	}
 	.hero-content h1 {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 	.hero-content p {
-		font-size: 1em;
+		font-size: .9em;
 		width: 85%;
 	}
 	.contact-btn {
 		height: 40px;
 		width: 120px;
-		font-size: 14px;
+		font-size: .9em;
+		margin-bottom: 30px;
+	}
+	.fa-angle-down {
+		font-size: 5em;
 	}
 }
-@media (max-height: 550px) {
-	.hero-content h1 {
-		font-size: 2.5em;
-	}
-	.hero-content p {
-		font-size: 1em;
-		width: 85%;
-	}
-	.contact-btn {
-		height: 50px;
-		width: 150px;
-		font-size: 1em;
-	}
-}
+
 .about-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -288,75 +304,133 @@ hr {
 	flex-direction: column;
 	list-style: none; 
 }
-/* Project Content */
-.proj-cont {
+/*---------- Skill List ----------*/
+.skill-list li {
+	padding: 15px 0;
+}
+
+.prog-bar {
+	width: 100%;
+	background-color: #fff;
+	height: 3px;
+}
+#html-prog, #css-prog, #javascript-prog, #wordpress-prog, #mongo-prog, #node-prog, #react-prog, #python-prog {
+	width: 1%;
+	height: 3px;
+}
+#html-prog {	
+	background-color:#f98e2a;
+}
+#css-prog {
+	background-color: #2a78f7;
+	
+}
+#javascript-prog {
+	background-color: #fcf125;
+}
+#node-prog {
+	background-color: #25d16a;
+}
+#react-prog {
+	background-color: #37FDFC;	
+}
+#mongo-prog {
+	background-color: #ff4444;
+}
+#wordpress-prog {
+	background-color: #c12eea;
+}
+#python-prog {
+	background-color: #f9029f;
+}
+.skill-list p {
+	display: inline;
+}
+
+/* ---------- Project Content ---------- */
+.project-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.figure-wrapper {
+	margin: 15px;
+}
+ .figure-wrapper h3{
+ 	color: #000 !important;
+ 	font-size: 2em;
+ 	margin: 15px 0;
+ }
+.figure-wrapper p {
+	color: #000 !important;
+	font-size: 1em;
+}
+
+.project-img {
+	height: 50%;
+	width: 100%;
+}
+.project-btn {
+	text-decoration: none;
+	color: #000000;
+	font-family: "Raleway";
+	font-size: 1.4em;
+	font-weight: bold;
+	background-color: #37FDFC;
+	border: 4px solid #000;
+	border-radius: 5px;
+	width: 150px;
+	
+}
+.project-btn:hover {
+	background-color: #000;
+	color: #eee;
+	transition: .25 ease;
+}
+.imghvr-shutter-out-diag-2:before,
+.imghvr-shutter-out-diag-2:after, 
+.imghvr-shutter-out-diag-2 figcaption  {
+	background-color: #37FDFC !important;
+}
+.proj-heading {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
+	text-align: center;
 }
 .proj-heading h1 {
 	font-family: 'Raleway', 'sans-serif';
-	font-weight: 300;
-	font-size: 40px;
+	font-weight: bold;
+	font-size: 2.6em;
+	margin-top: 40px;
 }
 .proj-heading p {
 	font-family: 'Raleway', 'sans-serif';
 	font-weight: 300;
-	font-size: 20px;
-	margin-bottom: 10px;
+	font-size: 1.1em;
+	width: 80%;
+	margin-bottom: 40px;
 }
 
-.project-imgs {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-.project-imgs figure {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	align-items: center;
-	background-color: #d3d3d3;
-	color: #000;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4) inset; 
-	margin: 5px 0;
-	padding: 5px;
-
-}
-.project-imgs img {
-	height: 50vh;
-}
 .small {
 	flex: 0 1 35%;
 }
 .large {
 	flex: 0 1 60%;
 }
-.project-imgs h3 {
-	margin: 5px 0;
-	width: 30%;
+@media (max-height: 540px) {
+	.small, .large {
+		flex: 0 1 100%;
+	}
+	.figure-wrapper h3 {
+		font-size: 1.8em;
+		margin: 7px 0;
+	}
+	.figure-wrapper p{
+		font-size: .9em;
 }
-.project-imgs img {
-	width: 100%;
-}
-
-.project-imgs img:hover {
-	opacity: .7;
-	cursor: default;
-}
-.project-imgs a:hover .colors {
-	background-color: red;
-	transition: 1s linear;
-}
-.project-imgs a {
-	width: 100%;
-}
-.project-imgs figcaption {
-	margin: 5px 0;
-	width: 100%;
 }
 @media (max-width: 900px){
 	.project-imgs {
@@ -368,7 +442,37 @@ hr {
 		flex: 0 1 100%;
 	}
 }
-/* Contact */
+/* ---------- Contact ---------- */
+.alert-box {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+.close {
+	padding-left: 6%;
+	color: #fff;
+	text-decoration: none;
+}
+.alert {
+	text-align: center;
+	width: 80%;
+	font-size: 1.5em;
+	border-radius: 10px;
+	padding: 3px;
+}
+.alert-warning {
+	color: #ffff00;
+	border: 1px solid #ffff00;
+}
+.alert-error {
+	color: #ff0000;
+	border: 1px solid #ff0000;
+}
+.alert-success {
+	color: #00ff00;
+	border: 1px solid #00ff00;
+}
 .content-cont {
 	display: flex;
 	flex-direction: column;
@@ -401,7 +505,11 @@ hr {
 .fa-paper-plane {
 	margin-left: 2px;
 } 
-/* Catch for spambots */
+@media (max-width: 550px) {
+	.content-cont form button {
+		font-size: .8em;		
+	}
+}
 #form-name, #form-email, #form-company {
 	font-size: 1.0em;
 	font-family: "Open Sans";
@@ -420,51 +528,8 @@ hr {
 	padding: 5px;
 	margin-top: 40px;
 	border: 1px solid #aaaaaa;
-	
-
 }
-/* Skills */
-
-.skill-list li {
-	padding: 5px 0;
-}
-
-.prog-bar {
-	width: 100%
-	background-color: gray;
-}
-#html-prog, #css-prog, #javascript-prog, #wordpress-prog, #mongo-prog, #node-prog, #react-prog, #python-prog {
-	width: 1%;
-	height: 1px;
-}
-#html-prog {	
-	background-color:#f98e2a;
-}
-#css-prog {
-	background-color: #2a78f7;
-	
-}
-#javascript-prog {
-	background-color: #fcf125;
-}
-#node-prog {
-	background-color: #25d16a;
-}
-#react-prog {
-	background-color: #37FDFC;	
-}
-#mongo-prog {
-	background-color: #ff4444;
-}
-#wordpress-prog {
-	background-color: #c12eea;
-}
-#python-prog {
-	background-color: #f9029f;
-}
+/*---------- Catch for spambots ----------*/
 #form-company {
-	opacity: 0;
-}
-.skill-list p {
-	display: inline;
+	display: none;
 }
