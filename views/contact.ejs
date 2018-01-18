@@ -5,28 +5,28 @@
 	<div class="alert-box">
 		<% if(type === 'error'){ %>
 			<div class="alert alert-error">
+				Problem encountered please resend or contact by phone.
 				<a class="close" href="#">
 					<i class="fa fa-times-circle"></i>
 				</a>
-				Problem encountered please resend or contact by phone.
 			</div>
 		</div>
 	<%	} if(type === 'empty') { %>
 	<div class="alert-box">
 		<div class="alert alert-warning"> 
-			<a class="close" href="#">
+				<%=msg %>
+				<a class="close" href="#">
 				<i class="fa fa-times-circle"></i>
 			</a>
-				<%=msg %>
 		</div>
 		</div>
 	<%	} if(type === 'success') { %>
 	<div class="alert-box">
 		<div class="alert alert-success"> 
-			<a class="close" href="#">
+				Success! You will hear from me as soon as possible.
+				<a class="close" href="#">
 				<i class="fa fa-times-circle"></i>
 			</a>
-				Success! You will hear from me as soon as possible.
 		</div>
 	</div>
 <%	} %>

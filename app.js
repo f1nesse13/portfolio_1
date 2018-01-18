@@ -77,14 +77,11 @@ app.post("/contact", function(req, res){
             transporter = nodemailer.createTransport({
             service: "Godaddy",
             host: "smtpout.secureserver.net",
-            port: "25",
-            secureConnection: false,
+            port: "465",
+            secureConnection: true,
             auth: {
             user: "jpell@finessedesigns.net",
             pass: process.env.EMAILPW
-            },
-            tls:{
-                rejectUnauthorized: false
             }
        });
 
