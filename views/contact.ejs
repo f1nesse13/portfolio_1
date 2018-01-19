@@ -3,29 +3,17 @@
 	<% if(typeof type !== 'undefined'){ %>
 	<div class="alert-box">
 		<% if(type === 'error'){ %>
-			<div class="alert alert-error">
-				Problem encountered please resend or contact by phone.
-				<a class="close" href="#">
-					<i class="fa fa-times-circle"></i>
-				</a>
+			<div class="alert alert-error">Problem encountered please resend or contact by phone.<a class="close" href="#"><i class="fa fa-times-circle"></i></a>
 			</div>
 		</div>
 	<%	} if(type === 'empty') { %>
 	<div class="alert-box">
-		<div class="alert alert-warning"> 
-				<%=msg %>
-				<a class="close" href="#">
-				<i class="fa fa-times-circle"></i>
-			</a>
+		<div class="alert alert-warning"><%=msg %><a class="close" href="#"><i class="fa fa-times-circle"></i></a>
 		</div>
 		</div>
 	<%	} if(type === 'success') { %>
 	<div class="alert-box">
-		<div class="alert alert-success"> 
-				Success! You will hear from me as soon as possible.
-				<a class="close" href="#">
-				<i class="fa fa-times-circle"></i>
-			</a>
+		<div class="alert alert-success">Success! You will hear from me as soon as possible.<a class="close" href="#"><i class="fa fa-times-circle"></i></a>
 		</div>
 	</div>
 <%	} %>
