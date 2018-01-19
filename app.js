@@ -75,14 +75,15 @@ app.post("/contact", function(req, res){
         let mailOptions, transporter;
 
             transporter = nodemailer.createTransport({
-            service: "Godaddy",
-            host: "smtpout.secureserver.net",
-            port: "465",
-            secureConnection: true,
+            host: "smtp.office365.com",
+            port: "587",
+            secureConnection: false,
             auth: {
             user: "jpell@finessedesigns.net",
             pass: process.env.EMAILPW
-            }
+            },
+            requireTLS: true
+            
        });
 
         // Fill mail options
